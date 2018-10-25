@@ -1,6 +1,6 @@
 
 //import interfaces in mydaco
-const mydaco = require('./Action-API');
+const mydaco = require('mydaco');
 const { mailDE, mailEN } = require('./mailTemplates');
 
 exports.main = async function (params) {

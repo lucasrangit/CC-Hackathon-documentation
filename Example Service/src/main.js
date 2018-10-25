@@ -6,7 +6,7 @@ const { benchmarkData } = require('./benchmarkData');
 const { mailTemplate: mailTemplateDE } = require('./mailTemplateDE');
 const { mailTemplate: mailTemplateEN } = require('./mailTemplateEN');
 
-const mydaco = require('./Action-API');
+const mydaco = require('mydaco');
 
 exports.main = async function (params) {
   try {
