@@ -1,6 +1,6 @@
 
 //import interfaces in mydaco
-const mydaco = require('./Action-API');
+const mydaco = require('mydaco');
 
 exports.main = async function main(params) {
 

@@ -1,5 +1,5 @@
 
-const mydaco = require('./Action-API');
+const mydaco = require('mydaco');
 const { template } = require('./Template.js');
 
 exports.main = async function main(params) {

@@ -1,5 +1,5 @@
 const { interestingProviders } = require('./providerMapping');
-const mydaco = require('./Action-API');
+const mydaco = require('mydaco');
 
 const interestingProviderNames = interestingProviders.map(p => p.provider);
 const isInterestingProvider = p => interestingProviderNames.indexOf(p.provider) > -1;
