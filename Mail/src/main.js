@@ -32,7 +32,7 @@ exports.main = async function (params) {
             html = 'Hello World! This is my mail service. Unfortunately, something went wrong.';
         }
     }
-    return { html, title, lang };
+    return { html, title };
 }
 
 function sendMail(subject, text, html) {

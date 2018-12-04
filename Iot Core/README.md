@@ -1,3 +1,3 @@
 # Iot Core
 
-Retrieves Provider, Devices and Data.
+Retrieves provider, devices and data. Registers to events. Actuates on devices.

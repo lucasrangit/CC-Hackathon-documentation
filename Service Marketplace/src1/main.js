@@ -1,4 +1,3 @@
-
 exports.main = function main(params) {
 
   // retrieve language form parameters
@@ -12,8 +11,8 @@ exports.main = function main(params) {
     html = 'Hallo Welt! Das ist mein erster Service für den Service Marketplace.';
   } else {
     title = 'My first Service';
-    html = 'Hello World! This is my first service for the Service Marketplace.';
+    html = 'Hello World! This is my first Service for the Service Marketplace.';
   }
 
-  return { html, title, lang };
+  return { html, title };
 }

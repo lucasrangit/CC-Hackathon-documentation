@@ -8,9 +8,9 @@ Demo properties for the service.\
 ![](images/iframe_1.png?raw=true)\
 This is how the iframe looks on the Service Marketplace.
 
-## Simple Service for ServiceMarketplace with pug
+## Simple Service for ServiceMarketplace with templates
 
-This is a very simple service for the Service Marketplace, that generates an UI based using [Pug](https://github.com/pugjs/pug) (src2).\
+This is a very simple service for the Service Marketplace, that generates an UI based using templates (src2).\
 ![](images/iframe_2.png?raw=true)\
 This is how the iframe looks on the Service Marketplace.
 

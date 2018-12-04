@@ -1,6 +1,6 @@
 
 const mydaco = require('mydaco');
-const { template } = require('./Template.js');
+const { fillTemplate } = require('./Template.js');
 
 exports.main = async function main(params) {
   const { lang = 'en' } = params.params;
@@ -15,16 +15,14 @@ exports.main = async function main(params) {
     title = 'My first Device Service';
     text = 'You have these devices:';
   }
-  const pugFill = { text, devices };
-  const pugCode = template;
+  const html = fillTemplate({ text, devices });
   return {
-    pugCode, pugFill, title, lang,
+    html, title
   };
 }
 
 //get all devices in the user's account
 async function getMyDevices() {
-
   //First retrieve providers
   const providerRAW = await mydaco.interface('IotCore', 'provider', {});
   if (providerRAW.length === 0)

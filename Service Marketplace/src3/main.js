@@ -1,8 +1,8 @@
 
-const { template } = require('./Template.js');
+const { fillTemplate } = require('./Template.js');
 
 exports.main = function main(params) {
-  if (params.params.initAction) {
+  if (params.func === 'start') {
     return handleInit(params);
   }
   return handleIframeClose(params);
@@ -22,18 +22,15 @@ async function handleInit(params) {
     text = 'Hello World! Choose your favorite device:';
     devices = ['Dishwasher', 'Fridge', 'Washingmachine'];
   }
-  const pugFill = { text, devices };
-  const pugCode = template;
-  const customId = '1';
-  const lastIFrame = false;
+  const html = fillTemplate({ text, devices }); console.log(html);
   return {
-    pugCode, pugFill, title, lang, customId, lastIFrame
+    html, title
   };
 }
 
 async function handleIframeClose(params) {
-  const { fields, lang } = params.params;
-  const { device } = fields;
+  const { inputs, lang } = params.params;
+  const { device } = inputs;
   if (lang === 'de') {
     title = 'Dein Lieblingsgerät';
     html = `Dein Lieblingsgerät ist: ${device}`;
@@ -41,5 +38,5 @@ async function handleIframeClose(params) {
     title = 'Your favorite device';
     html = `Your favorite device is: ${device}`;
   }
-  return { html, title, lang };
+  return { html, title };
 }

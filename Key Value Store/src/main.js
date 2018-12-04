@@ -22,7 +22,7 @@ exports.main = async function main(params) {
 
   await setNumber(number + 1);
 
-  return { html, title, lang };
+  return { html, title };
 }
 
 async function getNumber() {

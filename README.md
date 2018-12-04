@@ -4,12 +4,14 @@
 
 ## 2 - Service Marketplace
 
-## 3 - Iot Core
+## 3 - Widget
 
-## 4 - Mail
+## 4 - Key Value Store
 
-## 5 - Cron
+## 5 - Iot Core
 
-## 6 - Key Value Store
+## 6 - Mail
 
-## 7 - Example Service
+## 7 - Cron
+
+## 8 - Example Services
