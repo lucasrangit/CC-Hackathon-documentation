@@ -42,13 +42,6 @@ async function start(params) {
     const events = await mydaco.interface('IotCore', 'listEvents', {});
     console.log(events);
 
-    // initialize state
-    const storageOccupied = await mydaco.interface('KeyValueStore', 'put', { key: 'occupied', value: false });
-    
-    // debug (set mocked data)
-    const storageOccupied2 = await mydaco.interface('KeyValueStore', 'get', { key: 'occupied' });
-    console.log(storageOccupied2.value);
-
     return { title, html };
 }
 
@@ -79,6 +72,13 @@ async function interact(params) {
     
     const storageLamp = await mydaco.interface('KeyValueStore', 'put', { key: 'lampId', value: lampId });
 
+    // initialize state
+    const storageOccupied = await mydaco.interface('KeyValueStore', 'put', { key: 'occupied', value: false });
+    
+    // debug (set mocked data)
+    const storageOccupied2 = await mydaco.interface('KeyValueStore', 'get', { key: 'occupied' });
+    console.log(storageOccupied2.value);
+
     return { html: `The service is configured. Deleted ${message.length} old events.` };
 }
 
@@ -107,12 +107,12 @@ async function widgetMain(params) {
 
     if (params.func === 'start') {
         subTitle = 'start';
-        html = 'Occupied State: <br>';
+        html = '<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">';
         if (storageOccupied.value)
-            html += 'Occupied';
+            html += '<i class="material-icons">home</i>';
         else
-            html += 'Unoccupied';
-    } 
+            html += '<i class="material-icons">beach_access</i>';
+    }
     if (params.func === 'interact') {
         subTitle = 'interact';
         html = `TODO`;
