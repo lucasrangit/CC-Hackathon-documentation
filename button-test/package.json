@@ -1,0 +1,6 @@
+{
+    "main": "main.js",
+    "dependencies": {
+        "mydaco": "^1.1.0"
+    }
+}
