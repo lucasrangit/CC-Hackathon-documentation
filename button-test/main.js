@@ -13,6 +13,9 @@ exports.main = async function main(params) {
         if (params.inter === 'IotCore') {
             buttonEvent(params.params);
         }
+        if (params.inter === 'Widget') {
+            return widgetMain(params);
+        }
     } catch (e) {
         console.log(e);
     }
@@ -93,4 +96,27 @@ async function deleteOldTasks() {
         await mydaco.interface('IotCore', 'deleteEvent', { task: event.task });
     }
     return events;
+}
+
+async function widgetMain(params) {
+    let html, subTitle;
+
+    const storageOccupied = await mydaco.interface('KeyValueStore', 'get', { key: 'occupied' });
+    // debug (set mocked data)
+    console.log(storageOccupied.value);
+
+    if (params.func === 'start') {
+        subTitle = 'start';
+        html = 'Occupied State: <br>';
+        if (storageOccupied.value)
+            html += 'Occupied';
+        else
+            html += 'Unoccupied';
+    } 
+    if (params.func === 'interact') {
+        subTitle = 'interact';
+        html = `TODO`;
+    }
+
+    return { html, subTitle };
 }
